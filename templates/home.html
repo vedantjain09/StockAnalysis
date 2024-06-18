@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis Tool</title>
+</head>
+<body>
+    <h1>Stock Analysis Tool</h1>
+    {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <form action="/" method="post">
+        <label for="stock">Choose a stock:</label>
+        <select name="stock" id="stock" onchange="setStockValue()">
+            <option value="">Select a stock</option>
+            {% for stock in stocks %}
+            <option value="{{ stock }}" {% if stock == stock_selected %}selected{% endif %}>{{ stock }}</option>
+            {% endfor %}
+        </select>
+        <label for="date">Enter future date (YYYY-MM-DD):</label>
+        <input type="date" id="date" name="date">
+        <button type="submit">Show Graph and Predict</button>
+    </form>
+
+    {% if image %}
+    <img src="data:image/png;base64,{{ image }}" alt="Stock Graph">
+    {% endif %}
+    {% if prediction_message %}
+    <p>{{ prediction_message }}</p>
+    {% endif %}
+
+    <script>
+        function setStockValue() {
+            var select = document.getElementById('stock');
+            document.getElementById('date').value = ""; // Clear the date input when changing stocks
+        }
+    </script>
+</body>
+</html>
