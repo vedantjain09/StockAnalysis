@@ -1,7 +1,7 @@
 # Stock Analysis Web Application
 
 ## Description
-This web application, developed for ITP-216 Applied Python, allows users to analyze stock price fluctuations over time and predict future prices using a linear regression model. The application is built with Flask and utilizes libraries like pandas, matplotlib, and scikit-learn for data manipulation, visualization, and predictive modeling.
+This web application, allows users to analyze stock price fluctuations over time and predict future prices using a linear regression model. The application is built with Flask and utilizes libraries like pandas, matplotlib, and scikit-learn for data manipulation, visualization, and predictive modeling.
 
 ## Usage
 1. **Start Program**: Run app.py and access the web application via http://127.0.0.1:3800/ in your web browser. It may take a few moments to load.
